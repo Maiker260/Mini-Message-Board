@@ -1,0 +1,28 @@
+{
+  "name": "mini-message-board",
+  "version": "1.0.0",
+  "description": "Mini-Message-Board",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maiker260/Mini-Message-Board.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Maiker260/Mini-Message-Board/issues"
+  },
+  "homepage": "https://github.com/Maiker260/Mini-Message-Board#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
