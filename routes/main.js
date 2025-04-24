@@ -1,15 +1,22 @@
 import express from "express";
+import { messages } from "../messages.js";
+
 const router = express.Router();
 
-const pages = [
-    { path: "/", view: "index", title: "Home" },
-    { path: "/about", view: "about", title: "About" },
-]
+const routes = [
+    { path: "/", view: "index", title: "Mini Message Board", content: messages },
+];
 
-pages.forEach(({ path, view, title }) => {
+routes.forEach(({ path, view, title, content }) => {
     router.get(path, (req, res) => {
-        res.render(`pages/${view}`, { title });
+        res.render(`pages/${view}`, { title, content });
     });
 });
+
+router.post("/", (req, res) => {
+    const { messageText, messageUser } = req.body;
+    messages.push({ text: messageText, user: messageUser, added: new Date() });
+    res.redirect("/");
+})
 
 export default router;

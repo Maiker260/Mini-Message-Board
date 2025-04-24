@@ -5,12 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Message Board</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
+    <div class="main_container">
+        <h1 class="main_title">
+            <%= title %>
+        </h1>
+        <article class="new_post">
+            <form action="/" method="POST" class="form">
+                <input type="text" name="messageUser" class="input_text input_user" placeholder="User:">
+                <textarea name="messageText" class="input_text input_message" placeholder="Message:"></textarea>
+                <button class="submit_btn">Submit</button>
+            </form>
+        </article>
+        <article class="posts">
+            <% content.forEach(message=> { %>
+                <p class="post_container">
+                    <span class="post_user">
+                        <%= message.user %>
+                    </span>
+                    <span class="post_text">
+                        <%= message.text %>
+                    </span>
+                    <span class="post_date">
+                        <%= message.added %>
+                    </span>
+                </p>
+                <% }); %>
+        </article>
+    </div>
 </body>
 
 </html>
