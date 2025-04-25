@@ -15,7 +15,7 @@ routes.forEach(({ path, view, title, content }) => {
 
 router.post("/", (req, res) => {
     const { messageText, messageUser } = req.body;
-    messages.push({ text: messageText, user: messageUser, added: new Date() });
+    messages.push({ text: messageText, user: messageUser, added: new Date().toDateString() });
     res.redirect("/");
 })
 

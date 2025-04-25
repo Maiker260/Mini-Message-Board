@@ -1,5 +1,5 @@
 import express from "express";
-import path from "node:path"
+import path from "node:path";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import indexRouter from "./routes/main.js";
